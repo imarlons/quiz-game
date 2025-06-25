@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    /* Corrigido para 'Poppins' */
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 15px;
+    /* Aumentei o espaçamento para melhor visualização */
+    background: linear-gradient(90deg, rgba(91, 30, 159, 1) 0%, rgba(77, 39, 182, 1) 100%);
+    color: white;
+    /* Cor do texto padrão para o body */
+}
+
+body h2 {
+    color: white;
+    font-size: 2.2em;
+    /* Um pouco maior */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    /* Sombra para destaque */
+}
+
+main {
+    background-color: white;
+    padding: 20px;
+    /* Aumentei o padding */
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    /* Sombra para profundidade */
+    width: 100%;
+    max-width: 550px;
+    /* Aumentei a largura máxima */
+    min-height: 300px;
+    /* Aumentei a altura mínima */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    /* Garantir que o conteúdo dentro de main se organize em coluna */
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 15px;
+    /* Espaçamento entre elementos do conteúdo */
+}
+
+.spnQtd {
+    text-align: end;
+    font-size: 0.9em;
+    color: #555;
+    /* Cor mais suave para o contador */
+}
+
+.question {
+    font-size: 1.3em;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #333;
+    /* Cor do texto da pergunta */
+}
+
+.answers {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    /* Espaçamento entre as opções de resposta */
+}
+
+/* Estilo base para todos os botões de resposta */
+button.answer {
+    width: 100%;
+    text-align: start;
+    padding: 12px 15px;
+    /* Mais padding para melhor toque/clique */
+    border: 2px solid #008CCC;
+    /* Borda sutil */
+    border-radius: 8px;
+    /* Bordas mais arredondadas */
+    cursor: pointer;
+    background-color: #008CCC;
+    color: white;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    /* Transição para cor e borda */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    /* Sombra leve nos botões */
+}
+
+/* Efeito de Hover */
+button.answer:hover {
+    background-color: #006994;
+    /* Um tom mais escuro ao passar o mouse */
+    border-color: #006994;
+    /* Borda acompanha o hover */
+}
+
+/* Estilos para Respostas Certas e Erradas */
+/* O !important ajuda a garantir que essas regras prevaleçam */
+button.answer.correct {
+    background-color: #28a745 !important;
+    /* Verde vibrante */
+    border-color: #28a745 !important;
+    pointer-events: none;
+    /* Desabilita clique após a seleção */
+    cursor: default;
+}
+
+button.answer.wrong {
+    background-color: #dc3545 !important;
+    /* Vermelho vibrante */
+    border-color: #dc3545 !important;
+    pointer-events: none;
+    /* Desabilita clique após a seleção */
+    cursor: default;
+}
+
+/* Garantir que o hover não mude a cor depois de selecionado */
+button.answer.correct:hover,
+button.answer.wrong:hover {
+    background-color: inherit;
+    /* Volta para a cor definida pela classe .correct ou .wrong */
+    border-color: inherit;
+}
+
+
+.finish {
+    display: none;
+    flex-direction: column;
+    gap: 20px;
+    /* Mais espaço na tela de finalização */
+    align-items: center;
+    text-align: center;
+    color: #333;
+    font-size: 1.4em;
+    font-weight: 500;
+}
+
+.finish span {
+    margin-bottom: 10px;
+}
+
+.finish button {
+    padding: 12px 25px;
+    /* Mais padding para o botão de reiniciar */
+    background-color: #4CAF50;
+    /* Verde para reiniciar */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.finish button:hover {
+    background-color: #45a049;
+    /* Tom mais escuro no hover */
+}
+
+.logo-container {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+    z-index: 10;
+}
+
+.logo-container img {
+    height: 50px;
+}
